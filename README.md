@@ -1,1 +1,1 @@
-# faq-generator
+# faq-bot
