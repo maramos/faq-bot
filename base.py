@@ -70,10 +70,16 @@ vec = TfidfVectorizer(min_df=1)
 X_train = vec.fit_transform(get_quest(FAQ))
 n_samples, n_features = X_train.shape
 
-
+def nt(text):
+    new_text = text
+    new_text_vec = vec.transform([new_text])
+    nearest_question = nearest_one(FAQ.keys(),new_text)
+    FAQ.items()[nearest_question][1]
+    
+    
 ######
-new_text = "gostando"
-new_text_vec = vec.transform([new_text])
-nearest_question = nearest_one(FAQ.keys(),new_text)
-FAQ.items()[nearest_question][1]
+#new_text = "gostando"
+#new_text_vec = vec.transform([new_text])
+#nearest_question = nearest_one(FAQ.keys(),new_text)
+#FAQ.items()[nearest_question][1]
 ######
